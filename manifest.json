@@ -11,10 +11,10 @@
       "description": "Close all tabs"
     },
     "prevent-close-active": {
-      "description": "Prevent closing active window"
+      "description": "Prevent closing active tab"
     },
     "prevent-close-all": {
-      "description": "Prevent closing all windows"
+      "description": "Prevent closing all tabs"
     }
   },
   "background": {
@@ -22,7 +22,6 @@
   },
   "permissions": [
     "activeTab",
-    "scripting",
-    "debugger"
+    "scripting"
   ]
 }
