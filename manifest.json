@@ -1,0 +1,28 @@
+{
+  "manifest_version": 3,
+  "name": "Prevent Ctrl+W",
+  "version": "1.0",
+  "description": "Overwrite the Ctrl+W shortcut",
+  "commands": {
+    "close-active": {
+      "description": "Close active tab"
+    },
+    "close-all": {
+      "description": "Close all tabs"
+    },
+    "prevent-close-active": {
+      "description": "Prevent closing active window"
+    },
+    "prevent-close-all": {
+      "description": "Prevent closing all windows"
+    }
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "debugger"
+  ]
+}
