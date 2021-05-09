@@ -48,7 +48,7 @@ chrome.commands.onCommand.addListener(async (command) => {
     await chrome.tabs.sendMessage(tab.id, {
       preventCtrlW: { shift: command == "prevent-close-all" },
     });
-  } else if (command == "close-active" || command == "close-all") {
+  } else if (command == "close-active") {
     const highlightedQuery = {
       highlighted: command == "close-active" ? true : false,
       currentWindow: true,
@@ -56,5 +56,8 @@ chrome.commands.onCommand.addListener(async (command) => {
 
     const tabs = await chrome.tabs.query(highlightedQuery);
     chrome.tabs.remove(tabs.map((tab) => tab.id));
+  } else if (command == "close-all") {
+    const window = await chrome.windows.getCurrent()
+    await chrome.windows.remove(window.id)
   }
 });
